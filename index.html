@@ -473,6 +473,31 @@
       </a>
     </div>
 
+    <!-- Gift list -->
+    <div class="gift-section">
+      <button class="gift-toggle" onclick="toggleGifts()" aria-expanded="false" id="giftToggleBtn">
+        <span class="gift-toggle-line"></span>
+        <span class="gift-toggle-label">
+          🎁 &nbsp;Sugestão de Presentes
+          <span class="gift-toggle-arrow" id="giftArrow">▼</span>
+        </span>
+        <span class="gift-toggle-line right"></span>
+      </button>
+
+      <div class="gift-list" id="giftList">
+        <div class="gift-item"><span class="g-icon">👗</span><div><span class="g-text">Roupas</span><span class="g-sub">Tam. 38/39</span></div></div>
+        <div class="gift-item"><span class="g-icon">🛁</span><div><span class="g-text">Body Splash</span></div></div>
+        <div class="gift-item"><span class="g-icon">💄</span><div><span class="g-text">Maquiagem</span></div></div>
+        <div class="gift-item"><span class="g-icon">🧴</span><div><span class="g-text">Skin Care</span></div></div>
+        <div class="gift-item"><span class="g-icon">👠</span><div><span class="g-text">Sapatos</span><span class="g-sub">Tam. 38/39</span></div></div>
+        <div class="gift-item"><span class="g-icon">🎀</span><div><span class="g-text">Acessórios de Cabelo</span></div></div>
+        <div class="gift-item"><span class="g-icon">🌸</span><div><span class="g-text">Perfume</span><span class="g-sub">Fragrâncias doces</span></div></div>
+        <div class="gift-item"><span class="g-icon">💍</span><div><span class="g-text">Joias — Anel</span><span class="g-sub">Tam. 17</span></div></div>
+        <div class="gift-item"><span class="g-icon">🧴</span><div><span class="g-text">Hidratantes</span></div></div>
+        <div class="gift-item"><span class="g-icon">✨</span><div><span class="g-text">Produtos de Cabelo</span></div></div>
+      </div>
+    </div>
+
     <p class="footer-note">
       Traje: Esporte Fino &nbsp;·&nbsp; Favor confirmar até 20/04
       <span class="hearts">♥ ♥ ♥</span>
@@ -481,6 +506,16 @@
 </div>
 
 <script>
+// ── gift list toggle ──
+function toggleGifts() {
+  const list = document.getElementById('giftList');
+  const arrow = document.getElementById('giftArrow');
+  const btn = document.getElementById('giftToggleBtn');
+  const isOpen = list.classList.toggle('visible');
+  arrow.classList.toggle('open', isOpen);
+  btn.setAttribute('aria-expanded', isOpen);
+}
+
 // ── falling petals ──
 const petals = document.getElementById('petals');
 const colors = ['#C8253A','#A01020','#7B0A14','#E03050','#D44'];
